@@ -13,14 +13,13 @@ import com.pickth.haeun.todo.utils.TodoManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var mAdapter: TodoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mAdapter = TodoAdapter()
+        mAdapter = TodoAdapter(this)
         rv_main_todo.adapter = mAdapter
         rv_main_todo.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 

@@ -36,4 +36,9 @@ object TodoManager {
                 .putString("todos", Gson().toJson(mTodos).toString())
                 .apply()
     }
+
+    fun removeTodo(context: Context, position: Int) {
+        mTodos.removeAt(position)
+        notifyDataSetChanged(context)
+    }
 }
