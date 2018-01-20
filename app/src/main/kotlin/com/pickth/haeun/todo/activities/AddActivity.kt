@@ -26,6 +26,13 @@ class AddActivity : AppCompatActivity() {
 
         btn_add_ok.setOnClickListener {
             item = TodoItem(et_add_title.text.toString(), et_add_more.text.toString(), mdate)
+
+            var intent = Intent()
+            intent.putExtra("title", item.title)
+            intent.putExtra("more", item.more)
+            intent.putExtra("date", item.date)
+            setResult(10, intent)
+
             finish()
         }
 
@@ -35,14 +42,5 @@ class AddActivity : AppCompatActivity() {
                     .parse("${year}:${month +1}:${day}")
                     .time
         }
-    }
-
-    override fun finish() {
-        var intent = Intent()
-        intent.putExtra("title", item.title)
-        intent.putExtra("more", item.more)
-        intent.putExtra("date", item.date)
-        setResult(Activity.RESULT_OK, intent)
-        super.finish()
     }
 }

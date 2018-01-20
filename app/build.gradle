@@ -40,4 +40,7 @@ dependencies {
 
     // gson
     implementation 'com.google.code.gson:gson:2.8.1'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-ads:11.6.0'
 }
