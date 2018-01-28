@@ -9,6 +9,7 @@ import com.pickth.haeun.todo.R
 import com.pickth.haeun.todo.items.TodoItem
 import com.pickth.haeun.todo.utils.StringUtil
 import kotlinx.android.synthetic.main.activity_add.*
+import org.jetbrains.anko.toast
 import java.text.SimpleDateFormat
 
 class AddActivity : AppCompatActivity() {
@@ -27,6 +28,11 @@ class AddActivity : AppCompatActivity() {
         }
 
         btn_add_ok.setOnClickListener {
+            if (et_add_title.text.isBlank()) {
+                toast(getString(R.string.is_title))
+                return@setOnClickListener
+            }
+
             item = TodoItem(et_add_title.text.toString(), et_add_more.text.toString(), mdate)
 
             var intent = Intent()
@@ -39,9 +45,9 @@ class AddActivity : AppCompatActivity() {
         }
 
         cv_add_date.setOnDateChangeListener { p0, year, month, day ->
-            mdate = "${year}:${month +1}:${day}"
+            mdate = "${year}:${month + 1}:${day}"
             cv_add_date.date = SimpleDateFormat("yyyy:MM:dd")
-                    .parse("${year}:${month +1}:${day}")
+                    .parse("${year}:${month + 1}:${day}")
                     .time
         }
     }

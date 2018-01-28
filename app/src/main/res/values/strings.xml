@@ -10,4 +10,6 @@
 
     <string name="check_delete">삭제하시겠습니까?</string>
     <string name="check_ok">완료하고 삭제하시겠습니까?</string>
+
+    <string name="is_title">제목을 입력하세요.</string>
 </resources>

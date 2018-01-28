@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             //startActivity<AddActivity>()
         }
 
-        useAd()
+//        useAd()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -62,33 +62,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun useAd() {
-        val ADMOB_APP_ID = getString(R.string.admob_app_id)
-        val ADMOB_UNIT_ID = getString(R.string.admob_unit_id)
-        MobileAds.initialize(this, ADMOB_APP_ID)
-
-        val adRequest = AdRequest.Builder()
-                .build()
-
-        // Start loading the ad in the background.
-        ad_view.loadAd(adRequest)
-    }
+//    fun useAd() {
+//        val ADMOB_APP_ID = getString(R.string.admob_app_id)
+//        val ADMOB_UNIT_ID = getString(R.string.admob_unit_id)
+//        MobileAds.initialize(this, ADMOB_APP_ID)
+//
+//        val adRequest = AdRequest.Builder()
+//                .build()
+//
+//        // Start loading the ad in the background.
+//        ad_view.loadAd(adRequest)
+//    }
 
     // Called when leaving the activity
     public override fun onPause() {
-        ad_view.pause()
+//        ad_view.pause()
         super.onPause()
     }
 
     // Called when returning to the activity
     public override fun onResume() {
         super.onResume()
-        ad_view.resume()
+//        ad_view.resume()
     }
 
     // Called before the activity is destroyed
     public override fun onDestroy() {
-        ad_view.destroy()
+//        ad_view.destroy()
         super.onDestroy()
     }
 }
