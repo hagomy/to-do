@@ -40,20 +40,22 @@ class MainActivity : AppCompatActivity() {
         useAd()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1) {
             
             if (resultCode == 10) {
-                val title = data.getStringExtra("title")
-                val more = data.getStringExtra("more")
-                val date = data.getStringExtra("date")
-                val item = TodoItem(title, more, date)
+                if(data != null) {
+                    val title = data.getStringExtra("title")
+                    val more = data.getStringExtra("more")
+                    val date = data.getStringExtra("date")
+                    val item = TodoItem(title, more, date)
 
-                mAdapter.addItem(item)
-                mAdapter.notifyDataSetChanged()
+                    mAdapter.addItem(item)
+                    mAdapter.notifyDataSetChanged()
 
-                TodoManager.addTodo(this, item)
+                    TodoManager.addTodo(this, item)
+                }
             }
         }
     }
