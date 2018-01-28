@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.pickth.haeun.todo.R
 import com.pickth.haeun.todo.items.TodoItem
 import com.pickth.haeun.todo.utils.StringUtil
@@ -21,6 +22,7 @@ class AddActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add)
 
         btn_add_cancel.setOnClickListener {
+            setResult(Activity.RESULT_OK)
             finish()
         }
 
@@ -42,5 +44,10 @@ class AddActivity : AppCompatActivity() {
                     .parse("${year}:${month +1}:${day}")
                     .time
         }
+    }
+
+    override fun onBackPressed() {
+        setResult(Activity.RESULT_OK)
+        super.onBackPressed()
     }
 }

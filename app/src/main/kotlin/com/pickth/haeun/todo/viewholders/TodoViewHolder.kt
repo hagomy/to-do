@@ -27,6 +27,10 @@ class TodoViewHolder(view: View, val todoListener: OnTodoListener) :RecyclerView
             cb_item_is_checked.setOnCheckedChangeListener { p0, p1 ->
                 if(p1) {
                     // check
+                    context.alert(context.getString(R.string.check_ok)) {
+                        yesButton { todoListener.onDelete(position) }
+                        noButton { }
+                    }.show()
                 } else{
                 }
             }

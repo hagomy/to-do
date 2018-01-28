@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.widget.LinearLayout
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -42,8 +43,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        Log.i("MainActivity","${resultCode}")
+        Log.i("MainActivity","${requestCode}")
         if (requestCode == 1) {
-            
             if (resultCode == 10) {
                 if(data != null) {
                     val title = data.getStringExtra("title")
