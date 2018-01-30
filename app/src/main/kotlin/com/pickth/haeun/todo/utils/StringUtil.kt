@@ -1,11 +1,8 @@
 package com.pickth.haeun.todo.utils
 
 import android.util.Log
-import android.util.LogPrinter
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.logging.LogManager
-import java.util.logging.LogRecord
 
 /**
  * Created by HaEun on 2018-01-18.
@@ -23,7 +20,7 @@ object StringUtil {
         Log.i(TAG, "${result}")
 
         if (result < 0) {
-            result -=86400
+            result -= 86400
         }
 
         // 초
@@ -36,7 +33,7 @@ object StringUtil {
         result *= -1
 
 //        return result.toString()
-        if(result.toInt() == 0) {
+        if (result.toInt() == 0) {
             return "오늘"
         }
         if (result < 0) {

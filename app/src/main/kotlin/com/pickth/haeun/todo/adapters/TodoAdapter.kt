@@ -13,7 +13,7 @@ import com.pickth.haeun.todo.viewholders.TodoViewHolder
 /**
  * Created by HaEun on 2018-01-18.
  */
-class TodoAdapter(val context: Context): RecyclerView.Adapter<TodoViewHolder>(), OnTodoListener {
+class TodoAdapter(val context: Context) : RecyclerView.Adapter<TodoViewHolder>(), OnTodoListener {
     override fun onDelete(position: Int) {
         deleteItem(position)
     }

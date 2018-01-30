@@ -1,80 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginTop="9dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingLeft="9dp"
             android:paddingRight="9dp"
-            android:text="@string/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="@string/title" />
 
         <EditText
             android:id="@+id/et_add_title"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="9dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingLeft="9dp"
             android:paddingRight="9dp"
-            android:text="@string/memo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="@string/memo" />
+
         <EditText
             android:id="@+id/et_add_more"
-            android:layout_width="320dp"
-            android:inputType="text"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingLeft="9dp"
             android:paddingRight="9dp"
-            android:text="@string/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:paddingTop="15dp"
+            android:text="@string/date" />
 
         <CalendarView
             android:id="@+id/cv_add_date"
-            android:layout_width="330dp"
-            android:layout_height="330dp"> </CalendarView>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></CalendarView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="9dp"
-        android:layout_marginRight="9dp">
+        android:padding="10dp">
+
         <Button
             android:id="@+id/btn_add_cancel"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/cancel"/>
+            android:text="@string/cancel" />
+
         <Button
             android:id="@+id/btn_add_ok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ok"/>
+            android:text="@string/ok" />
     </LinearLayout>
 
 

@@ -4,9 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.pickth.haeun.todo.R
-import com.pickth.haeun.todo.items.TodoItem
 import com.pickth.haeun.todo.utils.StringUtil
 import kotlinx.android.synthetic.main.activity_add.*
 import org.jetbrains.anko.toast
@@ -15,7 +13,6 @@ import java.text.SimpleDateFormat
 class AddActivity : AppCompatActivity() {
 
     private val TAG = "AddActivity"
-    lateinit var item: TodoItem
     var mdate = StringUtil.getCurrentDay()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +30,14 @@ class AddActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            item = TodoItem(et_add_title.text.toString(), et_add_more.text.toString(), mdate)
+            val title = et_add_title.text.toString()
+            val more = et_add_more.text.toString()
+            val date = mdate
 
             var intent = Intent()
-            intent.putExtra("title", item.title)
-            intent.putExtra("more", item.more)
-            intent.putExtra("date", item.date)
+            intent.putExtra("title", title)
+            intent.putExtra("more", more)
+            intent.putExtra("date", date)
             setResult(10, intent)
 
             finish()
